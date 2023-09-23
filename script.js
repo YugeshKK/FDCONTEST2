@@ -104,6 +104,13 @@ const table= document.getElementById('tb');
 const input= document.querySelector('input');
 const btn= document.getElementById('btn');
 const az= document.getElementById('az');
+const za= document.getElementById('za');
+const mark= document.getElementById('mar');
+const passing= document.getElementById('pass');
+const yedam= document.getElementById('class')
+const inam=document.getElementById('gender');
+
+
 
 for (let i = 0; i < arr.length; i++) {
     
@@ -365,6 +372,469 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 }))
+
+
+za.addEventListener('click', (()=>{
+  
+
+
+  function compareByName(person1, person2) {
+      const name1 = person1.first_name 
+      const name2 = person2.first_name   
+  
+      if (name1 > name2) {
+          return -1;
+      }
+      if (name1 < name2) {
+          return 1;
+      }
+      return 0;
+  }
+  
+  arr.sort(compareByName);
+  table.innerHTML=`    <section class="table">
+                  <table id="tb">
+                      <tr>
+                          <th id="idd">ID</th>
+                          <th id="name">Name</th>
+                          <th id="gen">Gender</th>
+                          <th id="cla">Class</th>
+                          <th id="mar">Marks</th>
+                          <th id="pass">Passing</th>
+                          <th id="emai">Email</th>
+                      </tr>
+                      
+      
+      
+                  </table>
+              </section>`;
+  
+  for (let i = 0; i < arr.length; i++) {
+      
+    const ele= arr[i];
+    const tr=document.createElement('tr')
+    const data=[];
+    for (const key in ele) {
+        if (Object.hasOwnProperty.call(ele, key)) {
+          if(key=='id'){
+            var roll= ele[key];
+          }
+          if(key=='first_name'){
+            var first=ele[key];
+          }
+          if(key=='last_name'){
+            var last= ele[key];
+          }
+          if(key=='gender'){
+            var gen= ele[key]
+          }
+          if(key=='class'){
+            var clas=ele[key];
+          }
+          if(key=='marks'){
+            var mar= ele[key];
+          }
+          if(key=='passing'){
+            var pas= ele[key];
+          }
+          if(key=='email'){
+            var em= ele[key];
+          }
+          if(key=='img_src'){
+            var img= ele[key];
+          }
+  
+          var full= first +" "+ last;
+          if(pas){
+            var pass= 'passing';
+          }else{
+            var pass= 'failed';
+          }
+          
+          data.push(roll); data.push(full); data.push(gen);data.push(clas); data.push(mar); data.push(pass); data.push(em);
+        }       
+    }
+    for (let index = 0; index <7; index++) {
+      const th= document.createElement('th');
+      th.innerText=data[index];
+      tr.appendChild(th);       
+  }
+    table.appendChild(tr);
+  
+  
+  }
+  
+  }))
+
+mark.addEventListener('click', (()=>{
+
+  function compareByName(person1, person2) {
+        const name1 = person1.marks 
+        const name2 = person2.marks   
+    
+        if (name1 < name2) {
+            return -1;
+        }
+        if (name1 > name2) {
+            return 1;
+        }
+        return 0;
+    }
+    
+    arr.sort(compareByName);
+    table.innerHTML=`    <section class="table">
+                    <table id="tb">
+                        <tr>
+                            <th id="idd">ID</th>
+                            <th id="name">Name</th>
+                            <th id="gen">Gender</th>
+                            <th id="cla">Class</th>
+                            <th id="mar">Marks</th>
+                            <th id="pass">Passing</th>
+                            <th id="emai">Email</th>
+                        </tr>
+                        
+        
+        
+                    </table>
+                </section>`;
+    
+    for (let i = 0; i < arr.length; i++) {
+        
+      const ele= arr[i];
+      const tr=document.createElement('tr')
+      const data=[];
+      for (const key in ele) {
+          if (Object.hasOwnProperty.call(ele, key)) {
+            if(key=='id'){
+              var roll= ele[key];
+            }
+            if(key=='first_name'){
+              var first=ele[key];
+            }
+            if(key=='last_name'){
+              var last= ele[key];
+            }
+            if(key=='gender'){
+              var gen= ele[key]
+            }
+            if(key=='class'){
+              var clas=ele[key];
+            }
+            if(key=='marks'){
+              var mar= ele[key];
+            }
+            if(key=='passing'){
+              var pas= ele[key];
+            }
+            if(key=='email'){
+              var em= ele[key];
+            }
+            if(key=='img_src'){
+              var img= ele[key];
+            }
+    
+            var full= first +" "+ last;
+            if(pas){
+              var pass= 'passing';
+            }else{
+              var pass= 'failed';
+            }
+            
+            data.push(roll); data.push(full); data.push(gen);data.push(clas); data.push(mar); data.push(pass); data.push(em);
+          }       
+      }
+      for (let index = 0; index <7; index++) {
+        const th= document.createElement('th');
+        th.innerText=data[index];
+        tr.appendChild(th);       
+    }
+      table.appendChild(tr);
+    
+    
+    }
+    
+    }))
+
+
+passing.addEventListener('click', (()=>{
+
+      function compareByName(person1, person2) {
+            const name1 = person1.passing; 
+            const name2 = person2.passing;   
+        
+            if (name1 > name2) {
+                return -1;
+            }
+            if (name1 < name2) {
+                return 1;
+            }
+            return 0;
+        }
+        
+        arr.sort(compareByName);
+        table.innerHTML=`    <section class="table">
+                        <table id="tb">
+                            <tr>
+                                <th id="idd">ID</th>
+                                <th id="name">Name</th>
+                                <th id="gen">Gender</th>
+                                <th id="cla">Class</th>
+                                <th id="mar">Marks</th>
+                                <th id="pass">Passing</th>
+                                <th id="emai">Email</th>
+                            </tr>
+                            
+            
+            
+                        </table>
+                    </section>`;
+        
+        for (let i = 0; i < arr.length; i++) {
+            
+          const ele= arr[i];
+          const tr=document.createElement('tr')
+          const data=[];
+          for (const key in ele) {
+              if (Object.hasOwnProperty.call(ele, key)) {
+                if(key=='id'){
+                  var roll= ele[key];
+                }
+                if(key=='first_name'){
+                  var first=ele[key];
+                }
+                if(key=='last_name'){
+                  var last= ele[key];
+                }
+                if(key=='gender'){
+                  var gen= ele[key]
+                }
+                if(key=='class'){
+                  var clas=ele[key];
+                }
+                if(key=='marks'){
+                  var mar= ele[key];
+                }
+                if(key=='passing'){
+                  var pas= ele[key];
+                }
+                if(key=='email'){
+                  var em= ele[key];
+                }
+                if(key=='img_src'){
+                  var img= ele[key];
+                }
+        
+                var full= first +" "+ last;
+                if(pas){
+                  var pass= 'passing';
+                }else{
+                  var pass= 'failed';
+                }
+                
+                data.push(roll); data.push(full); data.push(gen);data.push(clas); data.push(mar); data.push(pass); data.push(em);
+              }       
+          }
+          for (let index = 0; index <7; index++) {
+            const th= document.createElement('th');
+            th.innerText=data[index];
+            tr.appendChild(th);       
+        }
+          table.appendChild(tr);
+        
+        
+        }
+        
+        }))
+
+yedam.addEventListener('click', (()=>{
+
+          function compareByName(person1, person2) {
+                const name1 = person1.class; 
+                const name2 = person2.class;   
+            
+                if (name1 < name2) {
+                    return -1;
+                }
+                if (name1 > name2) {
+                    return 1;
+                }
+                return 0;
+            }
+            
+            arr.sort(compareByName);
+            table.innerHTML=`    <section class="table">
+                            <table id="tb">
+                                <tr>
+                                    <th id="idd">ID</th>
+                                    <th id="name">Name</th>
+                                    <th id="gen">Gender</th>
+                                    <th id="cla">Class</th>
+                                    <th id="mar">Marks</th>
+                                    <th id="pass">Passing</th>
+                                    <th id="emai">Email</th>
+                                </tr>
+                                
+                
+                
+                            </table>
+                        </section>`;
+            
+            for (let i = 0; i < arr.length; i++) {
+                
+              const ele= arr[i];
+              const tr=document.createElement('tr')
+              const data=[];
+              for (const key in ele) {
+                  if (Object.hasOwnProperty.call(ele, key)) {
+                    if(key=='id'){
+                      var roll= ele[key];
+                    }
+                    if(key=='first_name'){
+                      var first=ele[key];
+                    }
+                    if(key=='last_name'){
+                      var last= ele[key];
+                    }
+                    if(key=='gender'){
+                      var gen= ele[key]
+                    }
+                    if(key=='class'){
+                      var clas=ele[key];
+                    }
+                    if(key=='marks'){
+                      var mar= ele[key];
+                    }
+                    if(key=='passing'){
+                      var pas= ele[key];
+                    }
+                    if(key=='email'){
+                      var em= ele[key];
+                    }
+                    if(key=='img_src'){
+                      var img= ele[key];
+                    }
+            
+                    var full= first +" "+ last;
+                    if(pas){
+                      var pass= 'passing';
+                    }else{
+                      var pass= 'failed';
+                    }
+                    
+                    data.push(roll); data.push(full); data.push(gen);data.push(clas); data.push(mar); data.push(pass); data.push(em);
+                  }       
+              }
+              for (let index = 0; index <7; index++) {
+                const th= document.createElement('th');
+                th.innerText=data[index];
+                tr.appendChild(th);       
+            }
+              table.appendChild(tr);
+            
+            
+            }
+            
+            }))
+
+inam.addEventListener('click', (()=>{
+
+              function compareByName(person1, person2) {
+                    const name1 = person1.gender; 
+                    const name2 = person2.gender;   
+                
+                    if (name1 < name2) {
+                        return -1;
+                    }
+                    if (name1 > name2) {
+                        return 1;
+                    }
+                    return 0;
+                }
+                
+                arr.sort(compareByName);
+                table.innerHTML=`    <section class="table">
+                                <table id="tb">
+                                    <tr>
+                                        <th id="idd">ID</th>
+                                        <th id="name">Name</th>
+                                        <th id="gen">Gender</th>
+                                        <th id="cla">Class</th>
+                                        <th id="mar">Marks</th>
+                                        <th id="pass">Passing</th>
+                                        <th id="emai">Email</th>
+                                    </tr>
+                                    
+                    
+                    
+                                </table>
+                            </section>`;
+                
+                for (let i = 0; i < arr.length; i++) {
+                    
+                  const ele= arr[i];
+                  const tr=document.createElement('tr')
+                  const data=[];
+                  for (const key in ele) {
+                      if (Object.hasOwnProperty.call(ele, key)) {
+                        if(key=='id'){
+                          var roll= ele[key];
+                        }
+                        if(key=='first_name'){
+                          var first=ele[key];
+                        }
+                        if(key=='last_name'){
+                          var last= ele[key];
+                        }
+                        if(key=='gender'){
+                          var gen= ele[key]
+                        }
+                        if(key=='class'){
+                          var clas=ele[key];
+                        }
+                        if(key=='marks'){
+                          var mar= ele[key];
+                        }
+                        if(key=='passing'){
+                          var pas= ele[key];
+                        }
+                        if(key=='email'){
+                          var em= ele[key];
+                        }
+                        if(key=='img_src'){
+                          var img= ele[key];
+                        }
+                
+                        var full= first +" "+ last;
+                        if(pas){
+                          var pass= 'passing';
+                        }else{
+                          var pass= 'failed';
+                        }
+                        
+                        data.push(roll); data.push(full); data.push(gen);data.push(clas); data.push(mar); data.push(pass); data.push(em);
+                      }       
+                  }
+                  for (let index = 0; index <7; index++) {
+                    const th= document.createElement('th');
+                    th.innerText=data[index];
+                    tr.appendChild(th);       
+                }
+                input.value='Excuse me , Why is there more than Two genders??'
+                  table.appendChild(tr);
+                
+                
+                }
+                
+                }))
+
+
+
+
+
+
+
+
 
 
 
