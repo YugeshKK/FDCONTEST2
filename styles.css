@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: black;
+    height: 60px;
+    color: white;
+}
+
+header p{
+    padding: 20px;
+    font-size: 20px;
+}
+
+section{
+    margin: 30px;
+}
+
+.cont{
+height: 60px;
+}
+.cont input, button{
+    height: 40px;
+    font-size: 18px;
+}
+
+.cont input{
+    width: 1030px;
+}
+.cont input::placeholder{
+    color: black;
+    padding: 10px;
+    font-size: 15px;
+}
+#btn{
+    width: 150px;
+    color: white;
+    background-color: black;
+}
+
+.sort{
+    display: flex;
+    justify-content: space-between;
+}
+.sort button{
+    width: 180px;
+    color: white;
+    background-color: black;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 15px;
+  }
+
+td, th {
+    border: 1px solid #100606;
+    text-align: left;
+    padding: 8px;
+  }
